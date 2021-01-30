@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1612022698791">
+  <link rel="stylesheet" href="/css/style.css?v=1612022901316">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -159,7 +159,9 @@
             
                 <h1 id="P1002-过河卒"><a href="#P1002-过河卒" class="headerlink" title="P1002 过河卒"></a>P1002 过河卒</h1><p><a name="SgI7t"></a></p>
 <h2 id="题目地址：https-www-luogu-com-cn-problem-P1002"><a href="#题目地址：https-www-luogu-com-cn-problem-P1002" class="headerlink" title="题目地址：https://www.luogu.com.cn/problem/P1002"></a>题目地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1002">https://www.luogu.com.cn/problem/P1002</a></h2><p><a name="GPu76"></a></p>
-<h2 id="题目截图："><a href="#题目截图：" class="headerlink" title="题目截图："></a>题目截图：</h2><p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.nlark.com/yuque/0/2021/png/12429168/1611407347951-c667e150-d568-4f73-b5e6-3cc7f303513d.png#align=left&display=inline&height=1132&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1132&originWidth=810&size=77685&status=done&style=none&width=810" alt="image.png" class="lazyload"><br /></p>
+<h2 id="题目截图："><a href="#题目截图：" class="headerlink" title="题目截图："></a>题目截图：</h2><p><img data-fancybox="gallery" data-sizes="auto" data-src="http://images2018.cnblogs.com/blog/1003156/201806/1003156-20180604175546711-227291592.png" alt="百度图片--lena" class="lazyload"></p>
+<br />
+
 <p><a name="b05yW"></a></p>
 <h2 id="题目分析与题解："><a href="#题目分析与题解：" class="headerlink" title="题目分析与题解："></a>题目分析与题解：</h2><p><br />这道题一眼看上去最容易想到的就是用深搜。<br />首先把马控制的点标记一下，以便遇到马控制的点后递归回溯。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">location[x][y]=<span class="number">1</span>;</span><br><span class="line">    location[x+<span class="number">2</span>][y+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    location[x+<span class="number">1</span>][y+<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x+<span class="number">2</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x+<span class="number">2</span>][y<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x+<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-2</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x+<span class="number">1</span>][y<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-2</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-2</span>][y<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-2</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-1</span>][y<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-2</span>&gt;=<span class="number">0</span> &amp;&amp; y+<span class="number">1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-2</span>][y+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; y+<span class="number">2</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-1</span>][y+<span class="number">2</span>]=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
@@ -260,7 +262,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1612022698792"></script>
+ <script src="/js/app.js?v=1612022901317"></script>
 
   
 
