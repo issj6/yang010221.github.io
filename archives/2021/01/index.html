@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1612028439679">
+  <link rel="stylesheet" href="/css/style.css?v=1612028468104">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -157,11 +157,7 @@
 
         <article>
             
-                <h1 id="BUUCTF-MISC-LSB"><a href="#BUUCTF-MISC-LSB" class="headerlink" title="BUUCTF-MISC-LSB"></a>BUUCTF-MISC-LSB</h1><p>题目地址：<a target="_blank" rel="noopener" href="https://buuoj.cn/challenges#LSB">https://buuoj.cn/challenges#LSB</a><br><br><br>下载附件，压缩包里有一个名为LSB的文件夹，文件夹中有一名为flag11的png格式图片。<br>文件夹名为LSB，猜测应该是使用了LSB隐写（第一次遇到，百度LSB是什么才知道）。<br>使用工具Stegsolve打开图片。<br><br><br>第一次接触此类隐写题目，工具也是第一次使用，查看WP后才知道怎么做。<br><br><br>首先使用工具遍历了一遍通道，发现红色，绿色，蓝色的最低位通道上面有可疑的东西。<br></p>
-<p><img data-fancybox="gallery" data-sizes="auto" data-src="/30154e2441b5/1610547183003-5613b728-16a1-4917-b904-f110dd926d44.png" alt="image.png" class="lazyload"><img data-fancybox="gallery" data-sizes="auto" data-src="/30154e2441b5/1610547197603-e33270da-a159-43bc-bfb1-91f14b679bff.png" alt="image.png" class="lazyload"><img data-fancybox="gallery" data-sizes="auto" data-src="/30154e2441b5/1610547215566-fcfa89a2-93e5-4bf8-816d-b7817cdc14d7.png" alt="image.png" class="lazyload"></p>
-<br>
-<br>然后就使用Analyse中的Data Extract功能将这三个通道合并，并保存合并后的结果。<br>![image.png](BUUCTF-MISC-LSB/1610547343662-7c310060-bf9c-458e-97b2-5cb9f56f98e1.png)<br>
-<br>发现保存为png后是一张二维码，扫码即可获得flag：flag{vjpw_wnoei}，提交即可。
+                <h1 id="BUUCTF-MISC-LSB"><a href="#BUUCTF-MISC-LSB" class="headerlink" title="BUUCTF-MISC-LSB"></a>BUUCTF-MISC-LSB</h1>
             
         </article>
     </div>
@@ -272,7 +268,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1612028439680"></script>
+ <script src="/js/app.js?v=1612028468105"></script>
 
   
 
