@@ -19,16 +19,16 @@
 <meta property="og:site_name" content="Ruut">
 <meta property="og:description" content="P1002 过河卒 题目地址：https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;problem&#x2F;P1002 题目截图：    题目分析与题解：这道题一眼看上去最容易想到的就是用深搜。首先把马控制的点标记一下，以便遇到马控制的点后递归回溯。 123456789101112131415location[x][y]&#x3D;1;    location[x+2][y+1]&#x3D;1;    location[x+1]">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://images2018.cnblogs.com/blog/1003156/201806/1003156-20180604175546711-227291592.png">
+<meta property="og:image" content="https://b.ruut.cn/16d2896de2b1/D:%5CHexo%5Csource%5C_posts%5CP1002%20%E8%BF%87%E6%B2%B3%E5%8D%92%5Cimage-20210131001732044.png">
 <meta property="article:published_time" content="2021-01-30T16:03:58.841Z">
-<meta property="article:modified_time" content="2021-01-30T16:08:12.221Z">
+<meta property="article:modified_time" content="2021-01-30T16:17:44.037Z">
 <meta property="article:author" content="Ruut">
 <meta property="article:tag" content="Ruut,ruut,博客,blog,程序员博客，程序员,code,代码">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://images2018.cnblogs.com/blog/1003156/201806/1003156-20180604175546711-227291592.png">
+<meta name="twitter:image" content="https://b.ruut.cn/16d2896de2b1/D:%5CHexo%5Csource%5C_posts%5CP1002%20%E8%BF%87%E6%B2%B3%E5%8D%92%5Cimage-20210131001732044.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1612022901310">
+  <link rel="stylesheet" href="/css/style.css?v=1612023477368">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -172,14 +172,14 @@
   <article>
     <h1 id="P1002-过河卒"><a href="#P1002-过河卒" class="headerlink" title="P1002 过河卒"></a>P1002 过河卒</h1><p><a name="SgI7t"></a></p>
 <h2 id="题目地址：https-www-luogu-com-cn-problem-P1002"><a href="#题目地址：https-www-luogu-com-cn-problem-P1002" class="headerlink" title="题目地址：https://www.luogu.com.cn/problem/P1002"></a>题目地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1002">https://www.luogu.com.cn/problem/P1002</a></h2><p><a name="GPu76"></a></p>
-<h2 id="题目截图："><a href="#题目截图：" class="headerlink" title="题目截图："></a>题目截图：</h2><p><img data-fancybox="gallery" data-sizes="auto" data-src="http://images2018.cnblogs.com/blog/1003156/201806/1003156-20180604175546711-227291592.png" alt="百度图片--lena" class="lazyload"></p>
-<br />
+<h2 id="题目截图："><a href="#题目截图：" class="headerlink" title="题目截图："></a>题目截图：</h2><p><img data-fancybox="gallery" data-sizes="auto" data-src="/16d2896de2b1/D:%5CHexo%5Csource%5C_posts%5CP1002%20%E8%BF%87%E6%B2%B3%E5%8D%92%5Cimage-20210131001732044.png" alt="image-20210131001732044" class="lazyload"></p>
+<br>
 
 <p><a name="b05yW"></a></p>
-<h2 id="题目分析与题解："><a href="#题目分析与题解：" class="headerlink" title="题目分析与题解："></a>题目分析与题解：</h2><p><br />这道题一眼看上去最容易想到的就是用深搜。<br />首先把马控制的点标记一下，以便遇到马控制的点后递归回溯。</p>
+<h2 id="题目分析与题解："><a href="#题目分析与题解：" class="headerlink" title="题目分析与题解："></a>题目分析与题解：</h2><p><br>这道题一眼看上去最容易想到的就是用深搜。<br>首先把马控制的点标记一下，以便遇到马控制的点后递归回溯。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">location[x][y]=<span class="number">1</span>;</span><br><span class="line">    location[x+<span class="number">2</span>][y+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    location[x+<span class="number">1</span>][y+<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x+<span class="number">2</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x+<span class="number">2</span>][y<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x+<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-2</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x+<span class="number">1</span>][y<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-2</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-2</span>][y<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; y<span class="number">-2</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-1</span>][y<span class="number">-2</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-2</span>&gt;=<span class="number">0</span> &amp;&amp; y+<span class="number">1</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-2</span>][y+<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(x<span class="number">-1</span>&gt;=<span class="number">0</span> &amp;&amp; y+<span class="number">2</span>&gt;=<span class="number">0</span>)</span><br><span class="line">        location[x<span class="number">-1</span>][y+<span class="number">2</span>]=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>然后就直接定义dfs函数，在main函数中调用dfs(0,0)，递归回溯就好了。<br />但是，这道题用深搜不行，有两个测试点会超时。<br /><br><br />所以就需要用其他方法。<br />这道题可以用动态规划（递推）来做。<br />题目要求的是从 (0,0) 点到 (n,m) 点共有多少条路径，而 (n,m) 点的走法是由到点 (n-1,m) 和 (n,m-1) 的走法决定的。<br />所以就是，状态转移方程：<em>DP__i</em>,<em>j</em>=<em>DP__i_−1,_j</em>+<em>DP__i</em>,_j_−1</p>
-<p>递推公式就是list[i][j]=list[i-1][j]+list[i][j-1].<br />通过该递推公式可以从 (0,0) 点依次遍历求出所有点的走法，最终求得 (n,m) 点共有多少种走法。<br />d大致图示就是：</p>
+<p>然后就直接定义dfs函数，在main函数中调用dfs(0,0)，递归回溯就好了。<br>但是，这道题用深搜不行，有两个测试点会超时。<br><br><br>所以就需要用其他方法。<br>这道题可以用动态规划（递推）来做。<br>题目要求的是从 (0,0) 点到 (n,m) 点共有多少条路径，而 (n,m) 点的走法是由到点 (n-1,m) 和 (n,m-1) 的走法决定的。<br>所以就是，状态转移方程：<em>DP__i</em>,<em>j</em>=<em>DP__i_−1,_j</em>+<em>DP__i</em>,_j_−1</p>
+<p>递推公式就是list[i][j]=list[i-1][j]+list[i][j-1].<br>通过该递推公式可以从 (0,0) 点依次遍历求出所有点的走法，最终求得 (n,m) 点共有多少种走法。<br>d大致图示就是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 1 1 1 1 1 1</span><br><span class="line">1 0 X 1 X 1 2</span><br><span class="line">1 X 0 1 1 X 2</span><br><span class="line">1 1 1 M 1 1 3</span><br><span class="line">1 X 1 1 0 X 3</span><br><span class="line">1 1 X 1 X 0 3</span><br><span class="line">1 2 2 3 3 3 6</span><br></pre></td></tr></table></figure>
 
 <p><a name="TR6IY"></a></p>
@@ -239,7 +239,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" src="http
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1612022901312"></script>
+ <script src="/js/app.js?v=1612023477370"></script>
 
   
 
