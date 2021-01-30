@@ -28,7 +28,7 @@
 <meta name="twitter:image" content="https://b.ruut.cn/28c43ba69537/image-20210131002839245.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1612025591671">
+  <link rel="stylesheet" href="/css/style.css?v=1612025779635">
 <meta name="generator" content="Hexo 5.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -175,11 +175,31 @@
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="继承的概念："><a href="#继承的概念：" class="headerlink" title="继承的概念："></a>继承的概念：</h3><p>继承是面向对象的三大特性之一，可以使子类具有父类的属性和方法，子类也可以重新定义父类中部的方法，以及追加属性和方法。</p>
 <h3 id="继承关键字："><a href="#继承关键字：" class="headerlink" title="继承关键字："></a>继承关键字：</h3><p>通过‘extends’关键字实现继承。</p>
 <p>例:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;&#125;<span class="comment">//Dog类继承父类Animal类。</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>&#123;&#125;<span class="hljs-comment">//Dog类继承父类Animal类。</span></code></pre>
 
 
 <h3 id="继承的好处："><a href="#继承的好处：" class="headerlink" title="继承的好处："></a>继承的好处：</h3><p>继承可以让类与类之间产生关系，产生子父类关系后，子类可以使用父类中的非私有成员。</p>
-<h3 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;show方法被调用&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">&quot;method方法被调用&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//创建对象，调用方法</span></span><br><span class="line">		Fu f = <span class="keyword">new</span> Fu();</span><br><span class="line">		f.show();</span><br><span class="line">            </span><br><span class="line">		Zi z = <span class="keyword">new</span> Zi();</span><br><span class="line">        z.method();</span><br><span class="line">        z.show();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h3><pre><code class="hljs Java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fu</span> </span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span> </span>&#123;
+		System.out.println(<span class="hljs-string">&quot;show方法被调用&quot;</span>);
+&#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Zi</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Fu</span> </span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span> </span>&#123;
+		System.out.println(<span class="hljs-string">&quot;method方法被调用&quot;</span>);
+	&#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> </span>&#123;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+		<span class="hljs-comment">//创建对象，调用方法</span>
+		Fu f = <span class="hljs-keyword">new</span> Fu();
+		f.show();
+            
+		Zi z = <span class="hljs-keyword">new</span> Zi();
+        z.method();
+        z.show();
+        &#125;
+&#125;</code></pre>
 
 
 <h3 id="继承中变量的访问特点："><a href="#继承中变量的访问特点：" class="headerlink" title="继承中变量的访问特点："></a>继承中变量的访问特点：</h3><p>先在访问位置的局部范围找，若没有则在子类成员范围内找，若没有则在父类成员范围内找。（不考虑父类的父类）</p>
@@ -205,16 +225,45 @@
 <h3 id="Java继承中的注意事项："><a href="#Java继承中的注意事项：" class="headerlink" title="Java继承中的注意事项："></a>Java继承中的注意事项：</h3><p>Java中没有多继承，只能单继承。</p>
 <p>Java中支持多层继承。</p>
 <p>多层继承示例：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Granddad</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drink</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   	 System.out.println(<span class="string">&quot;爷爷爱喝酒&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Father</span> <span class="keyword">extends</span> <span class="title">Granddad</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">smoke</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">&quot;爸爸爱抽烟&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Mother</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	System.out.println(<span class="string">&quot;妈妈爱跳舞&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span> </span>&#123;</span><br><span class="line">	<span class="comment">// 此时，Son类中就同时拥有drink方法以及smoke方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Granddad</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">drink</span><span class="hljs-params">()</span> </span>&#123;
+   	 System.out.println(<span class="hljs-string">&quot;爷爷爱喝酒&quot;</span>);
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Granddad</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">smoke</span><span class="hljs-params">()</span> </span>&#123;
+    	System.out.println(<span class="hljs-string">&quot;爸爸爱抽烟&quot;</span>);
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mother</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dance</span><span class="hljs-params">()</span> </span>&#123;
+    	System.out.println(<span class="hljs-string">&quot;妈妈爱跳舞&quot;</span>);
+    &#125;
+&#125;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Son</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Father</span> </span>&#123;
+	<span class="hljs-comment">// 此时，Son类中就同时拥有drink方法以及smoke方法</span>
+&#125;</code></pre>
 
 
 
 
 <h2 id="修饰符："><a href="#修饰符：" class="headerlink" title="修饰符："></a>修饰符：</h2><h3 id="package："><a href="#package：" class="headerlink" title="package："></a>package：</h3><p>1、包的概念<br>    包就是文件夹，用来管理类文件的<br>2、包的定义格式<br>    package 包名; (多级包用.分开)<br>    例如：package com.heima.demo;<br>3、带包编译&amp;带包运行<br>    带包编译：javac –d . 类名.java<br>        例如：javac -d . com.heima.demo.HelloWorld.java<br>    带包运行：java 包名+类名<br>        例如：java com.heima.demo.HelloWorld</p>
 <h3 id="import："><a href="#import：" class="headerlink" title="import："></a>import：</h3><p>1、导包的意义<br>使用不同包下的类时，使用的时候要写类的全路径，写起来太麻烦了<br>为了简化带包的操作，Java就提供了导包的功能<br>2、导包的格式<br>格式：import 包名;<br>范例：import java.util.Scanner;<br>3、示例代码（没有使用导包，创建的Scanner对象）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 没有导包，创建Scnaner对象</span></span><br><span class="line">        java.util.Scanner sc = <span class="keyword">new</span> java.util.Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.heima;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+        <span class="hljs-comment">// 1. 没有导包，创建Scnaner对象</span>
+        java.util.Scanner sc = <span class="hljs-keyword">new</span> java.util.Scanner(System.in);
+    &#125;
+&#125;</code></pre>
 <p>4、示例代码（使用导包后，创建的Scanner对象）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.heima;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;<span class="comment">//导包。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-keyword">package</span> com.heima;
+<span class="hljs-keyword">import</span> java.util.Scanner;<span class="hljs-comment">//导包。</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;
+        Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+    &#125;
+&#125;</code></pre>
 
 
 <h2 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h2><p><img data-fancybox="gallery" data-sizes="auto" data-src="/28c43ba69537/image-20210131002839245.png" alt="image-20210131002839245" class="lazyload"></p>
@@ -283,7 +332,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" src="http
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1612025591672"></script>
+ <script src="/js/app.js?v=1612025779636"></script>
 
   
 
